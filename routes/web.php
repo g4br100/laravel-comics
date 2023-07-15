@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $links = config('store.someLinks');
+    return view('welcome', compact('links'));
+});
+
+Route::get('/otherpage', function () {
+    $links = config('store.someLinks');
+    return view('other', compact('links'));
 });
